@@ -14,8 +14,10 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# Note: frontend/lib is NOT ignored (contains utils.ts)
+# Only ignore root level lib directories
+/lib/
+/lib64/
 parts/
 sdist/
 var/
