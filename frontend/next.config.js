@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  distDir: 'dist',
   images: {
     unoptimized: true,
   },
-  // Allow static export to work with client-side data fetching
+  // Allow client-side data fetching with Socket.io
   trailingSlash: true,
 }
 
