@@ -1,0 +1,40 @@
+name: mt5-dashboard-backend
+regions:
+  - yul
+  - iad
+  - fra
+
+static:
+  build:
+    docker:
+      dockerfile: Dockerfile
+
+ports:
+  - port: 8080
+    protocol: http
+    routes:
+      - path: /
+        port: 8080
+      - path: /api/accounts
+        port: 8080
+      - path: /socket.io/
+        port: 8080
+
+healthchecks:
+  - port: 8080
+    protocol: http
+    path: /api/accounts
+    period: 15s
+    timeout: 5s
+    healthy_threshold: 2
+    unhealthy_threshold: 3
+
+instances:
+  - type: free
+    scaling:
+      min: 1
+      max: 1
+
+env:
+  - name: PORT
+    value: "8080"
