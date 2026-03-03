@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mt5-dashboard-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 5000
+    healthCheckPath: /api/accounts
+    autoDeploy: true
+
+# Note: Frontend should be deployed separately to Vercel
+# with NEXT_PUBLIC_SOCKET_URL pointing to this backend URL
