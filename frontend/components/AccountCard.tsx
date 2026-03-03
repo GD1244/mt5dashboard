@@ -9,7 +9,7 @@ import {
   getRankIcon,
   getRankClass,
   cn
-} from '@/lib/utils';
+} from '../lib/utils';
 
 interface AccountCardProps {
   account: Account;

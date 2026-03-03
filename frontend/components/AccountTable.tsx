@@ -7,7 +7,7 @@ import {
   getProfitColor,
   getRankIcon,
   cn
-} from '@/lib/utils';
+} from '../lib/utils';
 
 interface AccountTableProps {
   accounts: Account[];

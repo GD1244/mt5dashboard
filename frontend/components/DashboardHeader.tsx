@@ -2,7 +2,7 @@
 
 import { useDashboardStore } from '@/store/dashboardStore';
 import { useSocket } from '@/hooks/useSocket';
-import { formatCurrency, formatNumber, formatTimeAgo, cn } from '@/lib/utils';
+import { formatCurrency, formatNumber, formatTimeAgo, cn } from '../lib/utils';
 
 // Simple icon components
 const SignalIcon = ({ className }: { className?: string }) => (
